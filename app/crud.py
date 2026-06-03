@@ -3,17 +3,17 @@ import logging
 logger = logging.getLogger(__name__)
 
 def count_characters(text):
-    """Conta tutti i caratteri nella frase, spazi inclusi."""
+    logger.info("Counting all characters, spaces included")
     return len(text)
 def count_characters_no_spaces(text):
-    """Conta solo i caratteri, escludendo gli spazi."""
+    logger.info("counting all characters, spaces excluded")
     return len(text.replace(" ", ""))
 def count_each_type(text):
-    """Restituisce un dizionario con il conteggio per tipo di carattere."""
+    logger.info("Counting each character type")
     return {
-        "totale": len(text),
-        "lettere": sum(c.isalpha() for c in text),
-        "numeri": sum(c.isdigit() for c in text),
-        "spazi": text.count(" "),
-        "punteggiatura": sum(not c.isalnum() and not c.isspace() for c in text)
+        "total": len(text),
+        "letters": sum(c.isalpha() for c in text),
+        "numbers": sum(c.isdigit() for c in text),
+        "spaces": text.count(" "),
+        "punctuation": sum(not c.isalnum() and not c.isspace() for c in text)
     }
