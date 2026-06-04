@@ -6,3 +6,6 @@ class CountResult(BaseModel):
     numbers: int
     spaces: int
     punctuation: int
+
+class TextToCount(BaseModel):
+    text: str
