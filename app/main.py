@@ -1,6 +1,11 @@
 from fastapi import FastAPI
+import logging
 
-app = FastAPI()
+from .logging_config import setup_logging
+from .routes import count
+
+app = FastAPI(title="count chars API")
+app.include_router(count.router)
 
 
 @app.get("/")
